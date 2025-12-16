@@ -124,6 +124,7 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 1rem;
 }
 
 .navbar-brand {
@@ -133,12 +134,15 @@ a {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  flex-shrink: 0;
 }
 
 .navbar-menu {
   display: flex;
-  gap: 2rem;
+  gap: 1.5rem;
   list-style: none;
+  flex-wrap: wrap;
+  justify-content: flex-end;
 }
 
 .navbar-menu a {
@@ -146,6 +150,7 @@ a {
   font-weight: 500;
   position: relative;
   padding: 0.5rem 0;
+  white-space: nowrap;
 }
 
 .navbar-menu a::after {
@@ -590,13 +595,30 @@ section.visible {
 }
 
 /* === RESPONSIVE === */
+/* === RESPONSIVE === */
 @media (max-width: 768px) {
+  .navbar {
+    padding: 1rem 0;
+  }
+
+  .navbar.scrolled {
+    padding: 0.75rem 0;
+  }
+
+  .navbar .container {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
   .navbar-menu {
     gap: 1rem;
+    justify-content: center;
+    width: 100%;
   }
 
   .navbar-menu a {
     font-size: 0.9rem;
+    padding: 0.25rem 0;
   }
 
   .container {
@@ -604,7 +626,12 @@ section.visible {
   }
 
   section {
-    padding: var(--spacing-lg) 0;
+    padding: 5rem 0;
+    /* Aumentado espaçamento entre seções */
+  }
+
+  .hero-name {
+    font-size: 3.5rem;
   }
 
   .skills-grid {
@@ -623,25 +650,47 @@ section.visible {
   .about-highlights {
     flex-direction: column;
     align-items: center;
+    gap: 1rem;
   }
 }
 
 @media (max-width: 480px) {
   .navbar-brand {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
   }
 
   .navbar-menu {
+    gap: 0.8rem 1.2rem;
+    /* Gap row column */
+  }
+
+  .navbar-menu a {
+    font-size: 0.85rem;
+  }
+
+  .hero {
+    padding-top: 140px;
+    /* Mais espaço para o navbar empilhado */
+  }
+
+  .hero-name {
+    font-size: 2.8rem;
+  }
+
+  .hero-badges {
     gap: 0.8rem;
   }
 
-  .hero-greeting {
-    font-size: 1rem;
+  .badge {
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
   }
 
   .btn {
     padding: 0.8rem 2rem;
     font-size: 0.9rem;
+    width: 100%;
+    /* Botão full width no mobile */
   }
 
   .project-content {
@@ -651,6 +700,10 @@ section.visible {
   .social-icon {
     width: 50px;
     height: 50px;
-    font-size: 1.5rem;
+    font-size: 1.4rem;
+  }
+
+  section {
+    padding: 4rem 0;
   }
 }
