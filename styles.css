@@ -430,10 +430,16 @@ section.visible {
 .skill-icon {
   font-size: 3rem;
   margin-bottom: var(--spacing-sm);
-  background: var(--gradient-primary);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--accent-cyan);
+}
+
+.skill-icon svg {
+  width: 3rem;
+  height: 3rem;
+  stroke-width: 1.5;
 }
 
 .skill-name {
