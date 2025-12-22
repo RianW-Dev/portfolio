@@ -10,14 +10,6 @@ Portfólio profissional de **Rian Willian** - Auxiliar de TI | Desenvolvedor | E
 
 Site de portfólio pessoal moderno e responsivo, desenvolvido para apresentar minhas habilidades, projetos e experiência na área de Tecnologia da Informação.
 
-## 🎨 Características
-
-- ✨ Design moderno e minimalista
-- 📱 Totalmente responsivo (mobile, tablet e desktop)
-- 🎯 Animações suaves ao scroll
-- 🌈 Paleta de cores tecnológica (azul, roxo, ciano)
-- ⚡ Performance otimizada
-- 🎭 Efeitos glassmorphism e gradientes
 
 ## 🛠️ Tecnologias Utilizadas
 
