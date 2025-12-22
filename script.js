@@ -1,7 +1,3 @@
-// ===================================
-// MODERN IT PORTFOLIO - JAVASCRIPT
-// ===================================
-
 // === NAVBAR SCROLL EFFECT ===
 const navbar = document.getElementById('navbar');
 let lastScroll = 0;
@@ -9,7 +5,6 @@ let lastScroll = 0;
 window.addEventListener('scroll', () => {
   const currentScroll = window.pageYOffset;
   
-  // Add scrolled class when user scrolls down
   if (currentScroll > 50) {
     navbar.classList.add('scrolled');
   } else {
@@ -18,6 +13,28 @@ window.addEventListener('scroll', () => {
   
   lastScroll = currentScroll;
 });
+
+// === MOBILE MENU TOGGLE ===
+const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+const navbarMenu = document.getElementById('navbar-menu');
+const navbarLinks = document.querySelectorAll('.navbar-menu a');
+
+if (mobileMenuToggle) {
+    mobileMenuToggle.addEventListener('click', () => {
+        mobileMenuToggle.classList.toggle('active');
+        navbarMenu.classList.toggle('active');
+        document.body.classList.toggle('no-scroll');
+    });
+
+    // Close menu when clicking a link
+    navbarLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            mobileMenuToggle.classList.remove('active');
+            navbarMenu.classList.remove('active');
+            document.body.classList.remove('no-scroll');
+        });
+    });
+}
 
 // === SMOOTH SCROLL FOR NAVIGATION LINKS ===
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
